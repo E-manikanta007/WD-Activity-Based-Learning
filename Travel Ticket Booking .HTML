@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Ticket Booking</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #eef3f8;
+        }
+
+        header {
+            background: hsl(246, 95%, 84%);
+            color: #41f80f;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background: \|oklch(61.592% 0.02263 131.707);
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: lab(81.4% -69.99 77.79);
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        .banner {
+            background: lab(81.64% -79.89 77.83);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            width: 85%;
+            margin: 20px auto;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px #cccccc;
+        }
+
+        input, select, button {
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid #aaa;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #087f5b;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #055c41;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #bbb;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background: #123c69;
+            color: white;
+        }
+
+        .seats {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 12px;
+            margin: 15px;
+        }
+
+        .seat {
+            background: #d4edda;
+            color: black;
+        }
+
+        .booked {
+            background: #e57373;
+        }
+
+        .selected {
+            background: #ffcc66;
+            color: black;
+        }
+
+        footer {
+            background: #082747;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+
+            input, select {
+                width: 85%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>TravelGo</h1>
+    <p>Your Journey, Our Responsibility</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#booking">Book Tickets</a>
+    <a href="#services">Services</a>
+    <a href="#fares">Fares</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<div class="banner" id="home">
+    <h2>Book Bus and Train Tickets Online</h2>
+    <p>Easy booking | Comfortable travel | Affordable fares</p>
+</div>
+
+<div class="container">
+
+    <section class="card" id="booking">
+        <h2>Search Your Journey</h2>
+
+        <form>
+            <label>Travel Type:</label>
+            <select name="travelType" required>
+                <option value="bus">Bus</option>
+                <option value="train">Train</option>
+            </select>
+            <br>
+
+            <label>From:</label>
+            <input type="text" placeholder="Source city" required>
+
+            <label>To:</label>
+            <input type="text" placeholder="Destination city" required>
+            <br>
+
+            <label>Travel Date:</label>
+            <input type="date" required>
+
+            <label>Passengers:</label>
+            <input type="number" min="1" max="10"
+                   value="1" required>
+            <br>
+
+            <button type="submit">Search Tickets</button>
+        </form>
+    </section>
+
+    <section class="card" id="services">
+        <h2>Available Travel Services</h2>
+
+        <div class="card">
+            <h3>🚌 Express Bus</h3>
+            <p>AC Sleeper / Non-AC Seater</p>
+            <p>Travel Time: 6 hours</p>
+            <p>Starting Fare: ₹650</p>
+            <button type="button"
+                    onclick="alert('Sample bus selected!')">
+                Select Bus
+            </button>
+        </div>
+
+        <div class="card">
+            <h3>🚆 Express Train</h3>
+            <p>Sleeper Class / AC Class</p>
+            <p>Travel Time: 5 hours</p>
+            <p>Starting Fare: ₹450</p>
+            <button type="button"
+                    onclick="alert('Sample train selected!')">
+                Select Train
+            </button>
+        </div>
+    </section>
+
+    <section class="card" id="fares">
+        <h2>Fare Information</h2>
+
+        <table>
+            <tr>
+                <th>Transport</th>
+                <th>Class</th>
+                <th>Fare</th>
+                <th>Availability</th>
+            </tr>
+
+            <tr>
+                <td>Bus</td>
+                <td>AC Sleeper</td>
+                <td>₹650</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>Bus</td>
+                <td>Non-AC</td>
+                <td>₹400</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>Train</td>
+                <td>Sleeper</td>
+                <td>₹450</td>
+                <td>Available</td>
+            </tr>
+
+            <tr>
+                <td>Train</td>
+                <td>AC Class</td>
+                <td>₹900</td>
+                <td>Limited</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="card">
+        <h2>Passenger Details</h2>
+
+        <form>
+            <label>Full Name:</label>
+            <input type="text" placeholder="Enter your name" required>
+            <br>
+
+            <label>Email:</label>
+            <input type="email" placeholder="Enter email" required>
+            <br>
+
+            <label>Phone:</label>
+            <input type="tel" placeholder="Enter phone number"
+                   pattern="[0-9]{10}" required>
+            <br>
+
+            <label>Gender:</label>
+            <select required>
+                <option value="">Select Gender</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Select Your Seat</h2>
+
+        <p>
+            <span style="color:green">■ Available</span>
+            &nbsp;
+            <span style="color:red">■ Booked</span>
+            &nbsp;
+            <span style="color:orange">■ Selected</span>
+        </p>
+
+        <div class="seats">
+            <button type="button" class="seat"
+                    onclick="selectSeat(this)">1</button>
+            <button type="button" class="seat"
+                    onclick="selectSeat(this)">2</button>
+            <button type="button" class="seat booked"
+                    disabled>3</button>
+            <button type="button" class="seat"
+                    onclick="selectSeat(this)">4</button>
+
+            <button type="button" class="seat"
+                    onclick="selectSeat(this)">5</button>
+            <button type="button" class="seat booked"
+                    disabled>6</button>
+            <button type="button" class="seat"
+                    onclick="selectSeat(this)">7</button>
+            <button type="button" class="seat"
+                    onclick="selectSeat(this)">8</button>
+        </div>
+
+        <p id="seatInfo">Selected Seat: None</p>
+
+        <button type="button" onclick="confirmBooking()">
+            Confirm Booking
+        </button>
+
+        <p id="result"></p>
+    </section>
+
+    <section class="card">
+        <h2>Travel Announcements</h2>
+        <details>
+            <summary>Booking Information</summary>
+            <p>Please check your travel date and passenger details
+               before booking.</p>
+        </details>
+
+        <details>
+            <summary>Cancellation Policy</summary>
+            <p>Cancellation charges may apply depending on the service.</p>
+        </details>
+    </section>
+
+</div>
+
+<footer id="contact">
+    <p>Contact: support@travelgo.example</p>
+    <p>&copy; 2026 TravelGo Ticket Booking Website</p>
+</footer>
+
+<script>
+    let selectedSeat = null;
+
+    function selectSeat(button) {
+        if (button.disabled) {
+            return;
+        }
+
+        let seats = document.querySelectorAll(".seat");
+
+        seats.forEach(function(seat) {
+            if (!seat.disabled) {
+                seat.classList.remove("selected");
+            }
+        });
+
+        button.classList.add("selected");
+        selectedSeat = button.innerText;
+
+        document.getElementById("seatInfo").innerText =
+            "Selected Seat: " + selectedSeat;
+    }
+
+    function confirmBooking() {
+        if (selectedSeat === null) {
+            alert("Please select a seat first!");
+            return;
+        }
+
+        document.getElementById("result").innerText =
+            "Demo booking completed for Seat " + selectedSeat +
+            ". No real ticket has been booked.";
+    }
+</script>
+
+</body>
+</html>
